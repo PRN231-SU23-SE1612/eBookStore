@@ -1,0 +1,24 @@
+﻿@page
+@model eBookStoreClient.Pages.Search.IndexModel
+@{
+}
+<div class="row">
+
+    <div class="products-grid grid">
+        @foreach (var book in Model.Book)
+        {
+            <figure class="product-style">
+                <img src="@book.Notes" alt="Books" class="product-item">
+                <button type="button" class="add-to-cart" data-product-tile="add-to-cart">Add to Cart</button>
+                <figcaption>
+                    <a asp-route-id="@book.BookId" asp-page="/Books/Details">
+                        <h3>@book.Title</h3>
+                        <p>Adam Silber</p>
+                        <div class="item-price">$ @book.Price</div>
+                    </a>
+                </figcaption>
+            </figure>
+        }
+    </div>
+
+</div>
